@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live at Manning — A Modern Retreat Among the Trees | Marietta, GA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C1A368;
+    --gold-light: #D4BA84;
+    --dark: #1a1a1a;
+    --brown-deep: #2d2520;
+    --brown-mid: #3a2f28;
+    --brown-warm: #4a3d33;
+    --cream: #FDFBF7;
+    --cream-warm: #F5F1EA;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --border: #E8E2D6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* === STICKY TAB NAVIGATION === */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: linear-gradient(135deg, rgba(26,26,26,0.96) 0%, rgba(45,37,32,0.96) 100%);
+    backdrop-filter: blur(12px);
+    padding: 0 40px;
+    height: 68px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(193,163,104,0.25);
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 24px;
+    color: #fff; letter-spacing: 2.5px;
+  }
+
+  .nav-brand span { color: var(--gold); font-weight: 500; }
+
+  .nav-tabs { display: flex; gap: 8px; }
+
+  .nav-tabs a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; font-size: 11px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: #B8B0A0; text-decoration: none;
+    padding: 10px 18px; border-radius: 3px;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .nav-tabs a::after {
+    content: '';
+    position: absolute; bottom: 4px; left: 50%;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: all 0.3s; transform: translateX(-50%);
+  }
+
+  .nav-tabs a:hover { color: var(--gold); }
+  .nav-tabs a:hover::after { width: 60%; }
+
+  .nav-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 10px;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold);
+    border: 1.5px solid var(--gold);
+    padding: 8px 18px; border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .nav-cta:hover { background: var(--gold); color: var(--dark); }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    height: 100vh; min-height: 620px;
+    overflow: hidden;
+    margin-top: 68px;
+  }
+
+  .hero-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(26,26,26,0.55) 0%, rgba(45,37,32,0.3) 50%, rgba(26,26,26,0.75) 100%);
+  }
+
+  .hero-content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 0 20px;
+  }
+
+  .hero-location {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; font-size: 14px;
+    letter-spacing: 8px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 78px;
+    color: #fff; letter-spacing: 3px;
+    line-height: 1.05; margin-bottom: 12px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.3);
+  }
+
+  .hero-gold-line {
+    width: 90px; height: 1px;
+    background: var(--gold); margin: 22px auto;
+  }
+
+  .hero-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic; font-size: 22px;
+    color: var(--gold-light); letter-spacing: 2px;
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    animation: bounce 2.2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* === TAGLINE === */
+  .tagline {
+    background: var(--gold);
+    padding: 20px 0;
+    display: flex; align-items: center; justify-content: center; gap: 50px;
+  }
+
+  .tagline span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; font-size: 13px;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: #fff;
+  }
+
+  .tagline-dot {
+    width: 5px; height: 5px;
+    background: rgba(255,255,255,0.55);
+    border-radius: 50%;
+  }
+
+  /* === SECTION === */
+  section { padding: 90px 60px; scroll-margin-top: 68px; }
+
+  .section-header {
+    text-align: center; margin-bottom: 56px;
+  }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 11px;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 44px;
+    color: var(--text); line-height: 1.15;
+  }
+
+  .section-gold-line {
+    width: 50px; height: 1px;
+    background: var(--gold); margin: 22px auto;
+  }
+
+  /* === ABOUT === */
+  #about { background: var(--cream); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px; align-items: center;
+    max-width: 1150px; margin: 0 auto;
+  }
+
+  .about-text p {
+    font-family: 'Lora', serif;
+    font-size: 17px; line-height: 1.85;
+    color: var(--text-light); margin-bottom: 22px;
+  }
+
+  .about-text-only {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-text-only p {
+    font-family: 'Lora', serif;
+    font-size: 18px; line-height: 1.9;
+    color: var(--text-light); margin-bottom: 22px;
+  }
+
+  .about-img {
+    width: 100%; border-radius: 6px;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+  }
+
+  /* === AT A GLANCE === */
+  #glance { background: linear-gradient(135deg, #1a1a1a 0%, #2d2520 50%, #3a2f28 100%); }
+  #glance .section-title { color: #fff; }
+
+  .glance-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px; max-width: 960px; margin: 0 auto;
+  }
+
+  .glance-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(193,163,104,0.22);
+    border-radius: 8px;
+    padding: 28px 16px; text-align: center;
+    transition: all 0.3s;
+  }
+
+  .glance-item:hover {
+    border-color: var(--gold);
+    background: rgba(193,163,104,0.06);
+    transform: translateY(-3px);
+  }
+
+  .glance-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 34px;
+    color: var(--gold); line-height: 1.1;
+  }
+
+  .glance-label-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; font-size: 10px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #8A8172; margin-top: 10px;
+  }
+
+  /* === GALLERY === */
+  #gallery { background: var(--cream); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; max-width: 1200px; margin: 0 auto;
+  }
+
+  .gallery-item {
+    position: relative; overflow: hidden;
+    border-radius: 6px; aspect-ratio: 4/5;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+
+  .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/10; }
+  .gallery-item.tall { grid-row: span 2; aspect-ratio: 3/4; }
+
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent 20%, rgba(0,0,0,0.8));
+    padding: 40px 20px 18px;
+    color: #fff;
+    opacity: 0; transition: opacity 0.3s;
+  }
+
+  .gallery-item:hover .gallery-caption { opacity: 1; }
+
+  .gallery-caption h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 20px;
+    letter-spacing: 1px; margin-bottom: 3px;
+  }
+
+  .gallery-caption p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* === QUOTE === */
+  .quote-section {
+    background: var(--cream-warm);
+    padding: 90px 40px;
+    text-align: center;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-weight: 300;
+    font-size: 52px; color: var(--text);
+    line-height: 1.25; max-width: 720px; margin: 0 auto;
+  }
+
+  .quote-accent { color: var(--gold); }
+
+  /* === FEATURES === */
+  #features { background: var(--cream); }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px; max-width: 960px; margin: 0 auto;
+  }
+
+  .feature-item {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 24px;
+    background: var(--cream-warm);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .feature-icon {
+    width: 44px; height: 44px;
+    background: var(--dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px; color: var(--gold);
+  }
+
+  .feature-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 13px;
+    letter-spacing: 1px; margin-bottom: 6px;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .feature-text p {
+    font-family: 'Lora', serif;
+    font-size: 14px; color: var(--text-light);
+    line-height: 1.55;
+  }
+
+  /* === BEST FIT === */
+  #bestfit { background: var(--cream-warm); }
+
+  .bestfit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px; max-width: 960px; margin: 0 auto;
+  }
+
+  .bestfit-item {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 40px 26px; text-align: center;
+    transition: all 0.3s;
+  }
+
+  .bestfit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 45px rgba(0,0,0,0.1);
+    border-color: var(--gold);
+  }
+
+  .bestfit-icon {
+    font-size: 34px; margin-bottom: 18px;
+    display: block;
+    color: var(--gold);
+  }
+
+  .bestfit-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .bestfit-item p {
+    font-family: 'Lora', serif;
+    font-size: 14px; color: var(--text-light);
+    line-height: 1.55;
+  }
+
+  /* === NEARBY === */
+  #nearby { background: var(--cream); }
+
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px; max-width: 960px; margin: 0 auto;
+  }
+
+  .nearby-item {
+    background: var(--cream-warm);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px 18px; text-align: center;
+    transition: all 0.3s;
+  }
+
+  .nearby-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+  }
+
+  .nearby-icon {
+    font-size: 26px; margin-bottom: 14px;
+    display: block; color: var(--gold);
+  }
+
+  .nearby-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 12px;
+    letter-spacing: 0.5px; margin-bottom: 10px;
+    line-height: 1.35;
+    color: var(--text);
+  }
+
+  .nearby-distance {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 26px;
+    color: var(--gold); line-height: 1;
+  }
+
+  .nearby-miles {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; letter-spacing: 1.2px;
+    text-transform: uppercase; color: #8A8172;
+    margin-top: 5px;
+  }
+
+  /* === RATES === */
+  #rates { background: linear-gradient(135deg, #1a1a1a 0%, #2d2520 50%, #3a2f28 100%); }
+  #rates .section-title { color: #fff; }
+
+  .rates-container {
+    max-width: 860px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  }
+
+  .rate-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(193,163,104,0.22);
+    border-radius: 14px; padding: 40px 32px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .rate-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    background: rgba(193,163,104,0.06);
+  }
+
+  .rate-card .rate-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; font-size: 12px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: #8A8172; margin-bottom: 14px;
+  }
+
+  .rate-card .rate-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 54px;
+    color: var(--gold); line-height: 1;
+  }
+
+  .rate-card .rate-per {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; color: #8A8172;
+    margin-top: 6px;
+  }
+
+  .rate-card .rate-note {
+    font-family: 'Lora', serif;
+    font-style: italic; font-size: 13px;
+    color: #A8A096; margin-top: 14px;
+  }
+
+  .rates-details {
+    max-width: 860px; margin: 34px auto 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 26px;
+  }
+
+  .rate-detail {
+    padding: 22px;
+    border-left: 2px solid rgba(193,163,104,0.35);
+  }
+
+  .rate-detail h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 11px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+
+  .rate-detail p {
+    font-family: 'Lora', serif;
+    font-size: 14px; color: #A8A096;
+    line-height: 1.55;
+  }
+
+  /* === CONTACT === */
+  #contact {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2520 50%, #3a2f28 100%);
+    padding: 90px 40px;
+    text-align: center;
+  }
+
+  #contact .section-title { color: #fff; margin-bottom: 30px; }
+
+  .contact-info {
+    max-width: 520px; margin: 0 auto;
+  }
+
+  .contact-phone {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 40px;
+    color: #fff; letter-spacing: 2.5px;
+    margin-bottom: 10px;
+  }
+
+  .contact-email {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; color: var(--gold);
+    letter-spacing: 2px; margin-bottom: 30px;
+  }
+
+  .contact-email a { color: var(--gold); text-decoration: none; }
+  .contact-email a:hover { text-decoration: underline; }
+
+  .contact-prompt {
+    font-family: 'Lora', serif;
+    font-size: 16px; color: #A8A096;
+    line-height: 1.75;
+    border-top: 1px solid rgba(193,163,104,0.22);
+    padding-top: 28px; margin-top: 14px;
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: #0e0c0a;
+    padding: 32px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .footer-left {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; font-size: 11px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: #5a5450;
+  }
+
+  .footer-avail {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 12px;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold);
+    border: 1.5px solid var(--gold);
+    padding: 9px 22px; border-radius: 3px;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; height: 60px; }
+    .nav-tabs { display: none; }
+    .hero { margin-top: 60px; }
+    .hero-title { font-size: 44px; }
+    .hero-subtitle { font-size: 16px; }
+    section { padding: 60px 20px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .glance-grid { grid-template-columns: repeat(3, 1fr); }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.wide, .gallery-item.tall { grid-column: auto; grid-row: auto; aspect-ratio: 4/5; }
+    .features-grid { grid-template-columns: 1fr; }
+    .rates-container { grid-template-columns: 1fr; }
+    .rates-details { grid-template-columns: 1fr; }
+    .bestfit-grid { grid-template-columns: 1fr; }
+    .nearby-grid { grid-template-columns: 1fr 1fr; }
+    .quote-text { font-size: 32px; }
+    footer { flex-direction: column; gap: 18px; text-align: center; }
+    .tagline { gap: 20px; }
+    .tagline span { font-size: 10px; letter-spacing: 3px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY TAB NAVIGATION -->
+<nav>
+  <div class="nav-brand">Live at <span>Manning</span></div>
+  <div class="nav-tabs">
+    <a href="#about">About</a>
+    <a href="#glance">Details</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#features">Features</a>
+    <a href="#bestfit">Best Fit</a>
+    <a href="#nearby">Nearby</a>
+    <a href="#rates">Rates</a>
+  </div>
+  <a href="#contact" class="nav-cta">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <img class="hero-img" src="images/red-car.jpg" alt="Red car in Manning driveway">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-location">Marietta, Georgia</div>
+    <h1 class="hero-title">Live at Manning</h1>
+    <div class="hero-gold-line"></div>
+    <p class="hero-subtitle">A Modern Retreat Among the Trees</p>
+  </div>
+  <a href="#about" class="hero-scroll">Scroll to explore &darr;</a>
+</section>
+
+<!-- TAGLINE -->
+<div class="tagline">
+  <span>Private</span>
+  <div class="tagline-dot"></div>
+  <span>Polished</span>
+  <div class="tagline-dot"></div>
+  <span>Peaceful</span>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-label">About This Home</div>
+    <h2 class="section-title">Where Space Meets Calm</h2>
+    <div class="section-gold-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>A Marietta home with wooded privacy, fenced yard, and flexible furnished terms. Situated on a 5,616 sq ft lot with a private driveway and a 4,000 sq ft fully fenced backyard nestled under mature trees.</p>
+      <p>Whether you're relocating for work, settling an insurance claim, or seeking a polished corporate stay, this home adapts to your timeline and furnishing needs.</p>
+    </div>
+    <img src="images/entrance.jpg" alt="Chic staged foyer entrance" class="about-img">
+  </div>
+</section>
+
+<!-- AT A GLANCE -->
+<section id="glance">
+  <div class="section-header">
+    <div class="section-label">At a Glance</div>
+    <h2 class="section-title">The Essentials</h2>
+    <div class="section-gold-line"></div>
+  </div>
+  <div class="glance-grid">
+    <div class="glance-item"><div class="glance-value">3</div><div class="glance-label-text">Bedrooms</div></div>
+    <div class="glance-item"><div class="glance-value">2.5</div><div class="glance-label-text">Baths</div></div>
+    <div class="glance-item"><div class="glance-value">1</div><div class="glance-label-text">Office / Flex</div></div>
+    <div class="glance-item"><div class="glance-value">Yes</div><div class="glance-label-text">Fenced Yard</div></div>
+    <div class="glance-item"><div class="glance-value">2+</div><div class="glance-label-text">Driveway</div></div>
+    <div class="glance-item"><div class="glance-value" style="font-size:22px;">4/20/26</div><div class="glance-label-text">Available</div></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header">
+    <div class="section-label">Photo Gallery</div>
+    <h2 class="section-title">Take a Closer Look</h2>
+    <div class="section-gold-line"></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="images/entrance.jpg" alt="Chic staged foyer">
+      <div class="gallery-caption">
+        <h4>Foyer Entrance</h4>
+        <p>Chic welcome home</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/kitchen-dining.jpg" alt="Kitchen and dining">
+      <div class="gallery-caption">
+        <h4>Kitchen & Dining</h4>
+        <p>Curated furnishings</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/staircase.jpg" alt="Staircase with gallery wall">
+      <div class="gallery-caption">
+        <h4>Gallery Staircase</h4>
+        <p>Elegant ambient light</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/bathroom.jpg" alt="Cozy bathroom">
+      <div class="gallery-caption">
+        <h4>Cozy Bathroom</h4>
+        <p>Spa-style retreat</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/door-view.jpg" alt="White door looking out to yard">
+      <div class="gallery-caption">
+        <h4>Yard Access</h4>
+        <p>Natural light entry</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/tall-trees.jpg" alt="Tall trees towering over the property">
+      <div class="gallery-caption">
+        <h4>Tall Tree Canopy</h4>
+        <p>Backyard forest</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/backyard-real.jpg" alt="Fenced backyard with trees">
+      <div class="gallery-caption">
+        <h4>Fenced Backyard</h4>
+        <p>Wooded privacy</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/side-landscape.jpg" alt="Manicured side yard">
+      <div class="gallery-caption">
+        <h4>Manicured Landscaping</h4>
+        <p>Side yard &amp; gate</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/deer.jpg" alt="Deer in Marietta">
+      <div class="gallery-caption">
+        <h4>Local Wildlife</h4>
+        <p>Marietta's natural setting</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-text">
+    <span class="quote-accent">&ldquo;</span>Live where space meets calm.<span class="quote-accent">&rdquo;</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-header">
+    <div class="section-label">Property Features</div>
+    <h2 class="section-title">What Makes It Special</h2>
+    <div class="section-gold-line"></div>
+  </div>
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">&#9670;</div>
+      <div class="feature-text">
+        <h3>Curated Living</h3>
+        <p>Fully furnished or semi-furnished options tailored to your stay.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">&#9670;</div>
+      <div class="feature-text">
+        <h3>Laurel Park Access</h3>
+        <p>Tennis, basketball courts, and a 400-meter track right across the street.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">&#9670;</div>
+      <div class="feature-text">
+        <h3>Wooded Privacy</h3>
+        <p>Rear access with mature tree canopy providing natural seclusion.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">&#9670;</div>
+      <div class="feature-text">
+        <h3>Backyard Oasis</h3>
+        <p>A pet's haven for run space. Pitch a tent, sandbox, or playhouse &mdash; ideal for children's adventures.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">&#9670;</div>
+      <div class="feature-text">
+        <h3>Flexible Terms</h3>
+        <p>Private 3BR home with office/flex room and adaptable lease structures.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">&#9670;</div>
+      <div class="feature-text">
+        <h3>Private Driveway</h3>
+        <p>2+ car driveway with 5,616 sq ft lot for comfortable living.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST FIT -->
+<section id="bestfit">
+  <div class="section-header">
+    <div class="section-label">Best Fit</div>
+    <h2 class="section-title">Who This Home Is For</h2>
+    <div class="section-gold-line"></div>
+  </div>
+  <div class="bestfit-grid">
+    <div class="bestfit-item">
+      <span class="bestfit-icon">&#9678;</span>
+      <h3>Insurance Placements</h3>
+      <p>Turnkey furnished housing for displaced families during claims.</p>
+    </div>
+    <div class="bestfit-item">
+      <span class="bestfit-icon">&#9678;</span>
+      <h3>Corporate Stays</h3>
+      <p>Polished accommodations for professionals on extended assignments.</p>
+    </div>
+    <div class="bestfit-item">
+      <span class="bestfit-icon">&#9678;</span>
+      <h3>Extended Furnished Housing</h3>
+      <p>Flexible terms for relocations, transitions, and longer stays.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEARBY -->
+<section id="nearby">
+  <div class="section-header">
+    <div class="section-label">Closest Facilities</div>
+    <h2 class="section-title">Healthcare &amp; Attractions Nearby</h2>
+    <div class="section-gold-line"></div>
+  </div>
+  <div class="nearby-grid">
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9769;</span>
+      <h3>Wellstar Cobb Hospital</h3>
+      <div class="nearby-distance">3.86</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9769;</span>
+      <h3>Austell VA CBOC</h3>
+      <div class="nearby-distance">4.45</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9769;</span>
+      <h3>Marietta Vet Center</h3>
+      <div class="nearby-distance">4.64</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9769;</span>
+      <h3>Wellstar Kennestone Hospital</h3>
+      <div class="nearby-distance">5.84</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9769;</span>
+      <h3>Piedmont Hospital</h3>
+      <div class="nearby-distance">10.24</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9670;</span>
+      <h3>Marietta Square</h3>
+      <div class="nearby-distance">3.5</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+  </div>
+</section>
+
+<!-- RATES -->
+<section id="rates">
+  <div class="section-header">
+    <div class="section-label">Rates & Terms</div>
+    <h2 class="section-title">Transparent Pricing</h2>
+    <div class="section-gold-line"></div>
+  </div>
+  <div class="rates-container">
+    <div class="rate-card">
+      <div class="rate-label">Fully Furnished</div>
+      <div class="rate-amount">$3,495</div>
+      <div class="rate-per">per month</div>
+      <div class="rate-note">Lawn care included</div>
+    </div>
+    <div class="rate-card">
+      <div class="rate-label">Partial Furnishing</div>
+      <div class="rate-amount">$3,200</div>
+      <div class="rate-per">per month &amp; up</div>
+      <div class="rate-note">Set-up deposit on items</div>
+    </div>
+  </div>
+  <div class="rates-details">
+    <div class="rate-detail">
+      <h4>Security Deposit</h4>
+      <p>Typically $1,300&ndash;$1,500. Lease term, furnishing level, and applicant profile may affect the final deposit.</p>
+    </div>
+    <div class="rate-detail">
+      <h4>Pets &amp; Utilities</h4>
+      <p>Pets case by case. Most approved pets fit within the furnished rate. Utilities may be capped for short stays or tenant-paid for longer terms.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2 class="section-title">Ready to Make It Home?</h2>
+  <div class="section-gold-line"></div>
+  <div class="contact-info">
+    <div class="contact-phone">650-477-0709</div>
+    <div class="contact-email"><a href="mailto:leasing@lekadora.com">leasing@lekadora.com</a></div>
+    <div class="contact-prompt">
+      Send your move-in date, stay length, occupant count, and whether you need fully or partially furnished terms. We'll prepare a tailored proposal for you.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">Insurance &bull; Corporate &bull; Extended Furnished Stays</div>
+  <div class="footer-avail">Available 4/20/26</div>
+</footer>
+
+</body>
+</html>
