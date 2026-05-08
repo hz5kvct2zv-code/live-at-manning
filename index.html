@@ -427,15 +427,15 @@
 
   .nearby-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px; max-width: 960px; margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px; max-width: 1140px; margin: 0 auto;
   }
 
   .nearby-item {
     background: var(--cream-warm);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 30px 18px; text-align: center;
+    padding: 24px 12px; text-align: center;
     transition: all 0.3s;
   }
 
@@ -693,7 +693,7 @@
     <div class="glance-item"><div class="glance-value">1</div><div class="glance-label-text">Office / Flex</div></div>
     <div class="glance-item"><div class="glance-value">Yes</div><div class="glance-label-text">Fenced Yard</div></div>
     <div class="glance-item"><div class="glance-value">2+</div><div class="glance-label-text">Driveway</div></div>
-    <div class="glance-item"><div class="glance-value" style="font-size:22px;">5/1/26</div><div class="glance-label-text">Available</div></div>
+    <div class="glance-item"><div class="glance-value" style="font-size:22px;">5/11/26</div><div class="glance-label-text">Available</div></div>
   </div>
 </section>
 
@@ -865,22 +865,11 @@
     <div class="section-gold-line"></div>
   </div>
   <div class="nearby-grid">
+    <!-- Row 1: Medical -->
     <div class="nearby-item">
       <span class="nearby-icon">&#9769;</span>
       <h3>Wellstar Cobb Hospital</h3>
       <div class="nearby-distance">3.86</div>
-      <div class="nearby-miles">miles away</div>
-    </div>
-    <div class="nearby-item">
-      <span class="nearby-icon">&#9769;</span>
-      <h3>Austell VA CBOC</h3>
-      <div class="nearby-distance">4.45</div>
-      <div class="nearby-miles">miles away</div>
-    </div>
-    <div class="nearby-item">
-      <span class="nearby-icon">&#9769;</span>
-      <h3>Marietta Vet Center</h3>
-      <div class="nearby-distance">4.64</div>
       <div class="nearby-miles">miles away</div>
     </div>
     <div class="nearby-item">
@@ -891,14 +880,27 @@
     </div>
     <div class="nearby-item">
       <span class="nearby-icon">&#9769;</span>
+      <h3>Austell VA CBOC</h3>
+      <div class="nearby-distance">4.45</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9769;</span>
       <h3>Piedmont Hospital</h3>
       <div class="nearby-distance">10.24</div>
       <div class="nearby-miles">miles away</div>
     </div>
+    <!-- Row 2: Downtown -->
     <div class="nearby-item">
       <span class="nearby-icon">&#9670;</span>
       <h3>Marietta Square</h3>
       <div class="nearby-distance">0.9</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9670;</span>
+      <h3>Six Flags White Water</h3>
+      <div class="nearby-distance">3.4</div>
       <div class="nearby-miles">miles away</div>
     </div>
     <div class="nearby-item">
@@ -913,16 +915,17 @@
       <div class="nearby-distance">1.1</div>
       <div class="nearby-miles">miles away</div>
     </div>
+    <!-- Row 3: Vet, Employer, Outdoor -->
     <div class="nearby-item">
-      <span class="nearby-icon">&#9670;</span>
-      <h3>Six Flags White Water</h3>
-      <div class="nearby-distance">3.4</div>
+      <span class="nearby-icon">&#9769;</span>
+      <h3>Marietta Vet Center</h3>
+      <div class="nearby-distance">2.0</div>
       <div class="nearby-miles">miles away</div>
     </div>
     <div class="nearby-item">
       <span class="nearby-icon">&#9670;</span>
-      <h3>Kennesaw Mountain Battlefield</h3>
-      <div class="nearby-distance">4.3</div>
+      <h3>Dobbins Air Reserve Base</h3>
+      <div class="nearby-distance">3.5</div>
       <div class="nearby-miles">miles away</div>
     </div>
     <div class="nearby-item">
@@ -933,8 +936,33 @@
     </div>
     <div class="nearby-item">
       <span class="nearby-icon">&#9670;</span>
-      <h3>Dobbins Air Reserve Base</h3>
-      <div class="nearby-distance">3.5</div>
+      <h3>Kennesaw Mountain Battlefield</h3>
+      <div class="nearby-distance">4.3</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <!-- Row 4: Sports -->
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9670;</span>
+      <h3>East Cobb Baseball Academy</h3>
+      <div class="nearby-distance">9.0</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9670;</span>
+      <h3>Atlanta Braves / Truist Park</h3>
+      <div class="nearby-distance">7.0</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9670;</span>
+      <h3>Perfect Game Events</h3>
+      <div class="nearby-distance">9.0</div>
+      <div class="nearby-miles">miles away</div>
+    </div>
+    <div class="nearby-item">
+      <span class="nearby-icon">&#9670;</span>
+      <h3>6-4-3 DP Athletics</h3>
+      <div class="nearby-distance">6.0</div>
       <div class="nearby-miles">miles away</div>
     </div>
   </div>
@@ -990,7 +1018,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">Insurance &bull; Corporate &bull; Extended Furnished Stays</div>
-  <div class="footer-avail">Available 5/1/26</div>
+  <div class="footer-avail">Available 5/11/26</div>
 </footer>
 
 </body>
