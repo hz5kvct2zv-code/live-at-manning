@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd4f7"/>
+      <stop offset="100%" stop-color="#72bde8"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="78%" cy="20%" r="28%">
+      <stop offset="0%" stop-color="#fff6b3" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#fff6b3" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fff6b3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="2400" fill="url(#sky)"/>
+  <rect width="1600" height="2400" fill="url(#sunGlow)"/>
+
+  <text x="800" y="520" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="700" fill="#123f86" letter-spacing="8">ONE CALLED</text>
+
+  <text x="800" y="820" text-anchor="middle" font-family="'Trebuchet MS', Arial, sans-serif" font-size="220" font-weight="700" fill="#0d2f6e" letter-spacing="6">THE AFRICAN</text>
+
+  <!-- SUN / SON word with O inside U -->
+  <g transform="translate(240,980)">
+    <text x="0" y="0" font-family="Impact, Arial Black, sans-serif" font-size="320" fill="#0f3d87">S</text>
+
+    <text x="250" y="0" font-family="Impact, Arial Black, sans-serif" font-size="320" fill="#1a58b5">U</text>
+    <circle cx="370" cy="-65" r="55" fill="#8fd4f7" stroke="#06295e" stroke-width="12"/>
+
+    <text x="520" y="0" font-family="Impact, Arial Black, sans-serif" font-size="320" fill="#0a2b63">N</text>
+  </g>
+
+  <text x="800" y="1320" text-anchor="middle" font-family="Verdana, Arial, sans-serif" font-size="64" fill="#1b4e9a" letter-spacing="2">Read it as SUN or SON</text>
+
+  <text x="800" y="2100" text-anchor="middle" font-family="Garamond, Georgia, serif" font-size="70" fill="#143b80" letter-spacing="4">A TALE BENEATH THE AFRICAN SKY</text>
+</svg>
